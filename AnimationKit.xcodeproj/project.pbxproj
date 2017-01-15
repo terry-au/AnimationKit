@@ -19,6 +19,9 @@
 		3357EE2C1E2BCE5100A3C1FB /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3357EE2A1E2BCE5100A3C1FB /* LaunchScreen.storyboard */; };
 		3357EE371E2BCE5100A3C1FB /* AnimationKitDemoTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 3357EE361E2BCE5100A3C1FB /* AnimationKitDemoTests.m */; };
 		3357EE421E2BCE5100A3C1FB /* AnimationKitDemoUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = 3357EE411E2BCE5100A3C1FB /* AnimationKitDemoUITests.m */; };
+		D5AF64CAF8F9118E47979D5B /* ANMAnimationQueue.m in Sources */ = {isa = PBXBuildFile; fileRef = D5AF6394089E01CA9AA7139E /* ANMAnimationQueue.m */; };
+		D5AF6C86E9AED0DE487A7AC8 /* ANMTypes.h in Headers */ = {isa = PBXBuildFile; fileRef = D5AF6DB8C2FD75B5D295E124 /* ANMTypes.h */; };
+		D5AF6C8AF0BF385A35F28C0F /* ANMTimingFunction.m in Sources */ = {isa = PBXBuildFile; fileRef = D5AF6083CF38BB582A8BAFBC /* ANMTimingFunction.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -81,6 +84,11 @@
 		3357EE3D1E2BCE5100A3C1FB /* AnimationKitDemoUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = AnimationKitDemoUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		3357EE411E2BCE5100A3C1FB /* AnimationKitDemoUITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AnimationKitDemoUITests.m; sourceTree = "<group>"; };
 		3357EE431E2BCE5100A3C1FB /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		D5AF6083CF38BB582A8BAFBC /* ANMTimingFunction.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ANMTimingFunction.m; sourceTree = "<group>"; };
+		D5AF6394089E01CA9AA7139E /* ANMAnimationQueue.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ANMAnimationQueue.m; sourceTree = "<group>"; };
+		D5AF6B3884DB7AB99806BF34 /* ANMAnimationQueue.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ANMAnimationQueue.h; sourceTree = "<group>"; };
+		D5AF6B535F333160F2AABC46 /* ANMTimingFunction.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ANMTimingFunction.h; sourceTree = "<group>"; };
+		D5AF6DB8C2FD75B5D295E124 /* ANMTypes.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ANMTypes.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -137,6 +145,11 @@
 			children = (
 				3357EE0C1E2BCE1B00A3C1FB /* AnimationKitStatic.h */,
 				3357EE0D1E2BCE1B00A3C1FB /* AnimationKitStatic.m */,
+				D5AF6B535F333160F2AABC46 /* ANMTimingFunction.h */,
+				D5AF6083CF38BB582A8BAFBC /* ANMTimingFunction.m */,
+				D5AF6394089E01CA9AA7139E /* ANMAnimationQueue.m */,
+				D5AF6B3884DB7AB99806BF34 /* ANMAnimationQueue.h */,
+				D5AF6DB8C2FD75B5D295E124 /* ANMTypes.h */,
 			);
 			path = AnimationKitStatic;
 			sourceTree = "<group>";
@@ -215,6 +228,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				3357EDF11E2BCD5E00A3C1FB /* AnimationKit.h in Headers */,
+				D5AF6C86E9AED0DE487A7AC8 /* ANMTypes.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -416,6 +430,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				3357EE0E1E2BCE1B00A3C1FB /* AnimationKitStatic.m in Sources */,
+				D5AF6C8AF0BF385A35F28C0F /* ANMTimingFunction.m in Sources */,
+				D5AF64CAF8F9118E47979D5B /* ANMAnimationQueue.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -499,7 +515,7 @@
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				IPHONEOS_DEPLOYMENT_TARGET = 10.2;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				OTHER_LDFLAGS = all_load;
+				OTHER_LDFLAGS = "-all_load";
 				PRODUCT_BUNDLE_IDENTIFIER = com.terry1994.AnimationKit;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
@@ -522,7 +538,7 @@
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				IPHONEOS_DEPLOYMENT_TARGET = 10.2;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				OTHER_LDFLAGS = all_load;
+				OTHER_LDFLAGS = "-all_load";
 				PRODUCT_BUNDLE_IDENTIFIER = com.terry1994.AnimationKit;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
@@ -733,6 +749,7 @@
 				3357EDF41E2BCD5E00A3C1FB /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		3357EE101E2BCE1B00A3C1FB /* Build configuration list for PBXNativeTarget "AnimationKitStatic" */ = {
 			isa = XCConfigurationList;
@@ -741,6 +758,7 @@
 				3357EE121E2BCE1B00A3C1FB /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		3357EE441E2BCE5100A3C1FB /* Build configuration list for PBXNativeTarget "AnimationKitDemo" */ = {
 			isa = XCConfigurationList;
@@ -749,6 +767,7 @@
 				3357EE461E2BCE5100A3C1FB /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		3357EE471E2BCE5100A3C1FB /* Build configuration list for PBXNativeTarget "AnimationKitDemoTests" */ = {
 			isa = XCConfigurationList;
@@ -757,6 +776,7 @@
 				3357EE491E2BCE5100A3C1FB /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		3357EE4A1E2BCE5100A3C1FB /* Build configuration list for PBXNativeTarget "AnimationKitDemoUITests" */ = {
 			isa = XCConfigurationList;
@@ -765,6 +785,7 @@
 				3357EE4C1E2BCE5100A3C1FB /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		D5AF68A305793E82FAB8EDF9 /* Build configuration list for PBXProject "AnimationKit" */ = {
 			isa = XCConfigurationList;
