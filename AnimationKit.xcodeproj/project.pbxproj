@@ -20,6 +20,9 @@
 		3357EE371E2BCE5100A3C1FB /* AnimationKitDemoTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 3357EE361E2BCE5100A3C1FB /* AnimationKitDemoTests.m */; };
 		3357EE421E2BCE5100A3C1FB /* AnimationKitDemoUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = 3357EE411E2BCE5100A3C1FB /* AnimationKitDemoUITests.m */; };
 		D5AF64CAF8F9118E47979D5B /* ANMAnimationQueue.m in Sources */ = {isa = PBXBuildFile; fileRef = D5AF6394089E01CA9AA7139E /* ANMAnimationQueue.m */; };
+		D5AF6676E5BFD412A723773E /* ANMQueuableAnimationBase.m in Sources */ = {isa = PBXBuildFile; fileRef = D5AF624D673E9D64CB01EC68 /* ANMQueuableAnimationBase.m */; };
+		D5AF67CD6DA2057CD56010D0 /* ANMAnimationQueue-Private.h in Headers */ = {isa = PBXBuildFile; fileRef = D5AF6B9C705AEE844C822C59 /* ANMAnimationQueue-Private.h */; };
+		D5AF69154A3A8E05F4EA7F81 /* ANMQueueableAnimationCompletionBlock.m in Sources */ = {isa = PBXBuildFile; fileRef = D5AF60B52FD0A16C75747904 /* ANMQueueableAnimationCompletionBlock.m */; };
 		D5AF6C86E9AED0DE487A7AC8 /* ANMTypes.h in Headers */ = {isa = PBXBuildFile; fileRef = D5AF6DB8C2FD75B5D295E124 /* ANMTypes.h */; };
 		D5AF6C8AF0BF385A35F28C0F /* ANMTimingFunction.m in Sources */ = {isa = PBXBuildFile; fileRef = D5AF6083CF38BB582A8BAFBC /* ANMTimingFunction.m */; };
 /* End PBXBuildFile section */
@@ -85,10 +88,16 @@
 		3357EE411E2BCE5100A3C1FB /* AnimationKitDemoUITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AnimationKitDemoUITests.m; sourceTree = "<group>"; };
 		3357EE431E2BCE5100A3C1FB /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		D5AF6083CF38BB582A8BAFBC /* ANMTimingFunction.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ANMTimingFunction.m; sourceTree = "<group>"; };
+		D5AF60B52FD0A16C75747904 /* ANMQueueableAnimationCompletionBlock.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ANMQueueableAnimationCompletionBlock.m; sourceTree = "<group>"; };
+		D5AF624D673E9D64CB01EC68 /* ANMQueuableAnimationBase.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ANMQueuableAnimationBase.m; sourceTree = "<group>"; };
 		D5AF6394089E01CA9AA7139E /* ANMAnimationQueue.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ANMAnimationQueue.m; sourceTree = "<group>"; };
+		D5AF6A2B11E959004F705504 /* ANMQueueableAnimationCompletionBlock.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ANMQueueableAnimationCompletionBlock.h; sourceTree = "<group>"; };
+		D5AF6AC8DCC74776E5CFEB8E /* ANMQueuableAnimationBase.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ANMQueuableAnimationBase.h; sourceTree = "<group>"; };
 		D5AF6B3884DB7AB99806BF34 /* ANMAnimationQueue.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ANMAnimationQueue.h; sourceTree = "<group>"; };
 		D5AF6B535F333160F2AABC46 /* ANMTimingFunction.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ANMTimingFunction.h; sourceTree = "<group>"; };
+		D5AF6B9C705AEE844C822C59 /* ANMAnimationQueue-Private.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "ANMAnimationQueue-Private.h"; sourceTree = "<group>"; };
 		D5AF6DB8C2FD75B5D295E124 /* ANMTypes.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ANMTypes.h; sourceTree = "<group>"; };
+		D5AF6FBAE7920473D56D56CF /* ANMQueueableAnimation-Protocol.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "ANMQueueableAnimation-Protocol.h"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -150,6 +159,12 @@
 				D5AF6394089E01CA9AA7139E /* ANMAnimationQueue.m */,
 				D5AF6B3884DB7AB99806BF34 /* ANMAnimationQueue.h */,
 				D5AF6DB8C2FD75B5D295E124 /* ANMTypes.h */,
+				D5AF624D673E9D64CB01EC68 /* ANMQueuableAnimationBase.m */,
+				D5AF6AC8DCC74776E5CFEB8E /* ANMQueuableAnimationBase.h */,
+				D5AF6FBAE7920473D56D56CF /* ANMQueueableAnimation-Protocol.h */,
+				D5AF60B52FD0A16C75747904 /* ANMQueueableAnimationCompletionBlock.m */,
+				D5AF6A2B11E959004F705504 /* ANMQueueableAnimationCompletionBlock.h */,
+				D5AF6B9C705AEE844C822C59 /* ANMAnimationQueue-Private.h */,
 			);
 			path = AnimationKitStatic;
 			sourceTree = "<group>";
@@ -229,6 +244,7 @@
 			files = (
 				3357EDF11E2BCD5E00A3C1FB /* AnimationKit.h in Headers */,
 				D5AF6C86E9AED0DE487A7AC8 /* ANMTypes.h in Headers */,
+				D5AF67CD6DA2057CD56010D0 /* ANMAnimationQueue-Private.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -432,6 +448,8 @@
 				3357EE0E1E2BCE1B00A3C1FB /* AnimationKitStatic.m in Sources */,
 				D5AF6C8AF0BF385A35F28C0F /* ANMTimingFunction.m in Sources */,
 				D5AF64CAF8F9118E47979D5B /* ANMAnimationQueue.m in Sources */,
+				D5AF6676E5BFD412A723773E /* ANMQueuableAnimationBase.m in Sources */,
+				D5AF69154A3A8E05F4EA7F81 /* ANMQueueableAnimationCompletionBlock.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -14,7 +14,7 @@
 }
 
 static CGPoint cappedPoint(CGPoint point) {
-    CGPoint result;
+    CGPoint result = CGPointZero;
     result.x = MAX(MIN(point.x, 1.0f), 0.0f);
     result.y = MAX(MIN(point.y, 1.0f), 0.0f);
     return result;
