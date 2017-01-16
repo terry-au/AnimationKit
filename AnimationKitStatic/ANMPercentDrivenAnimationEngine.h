@@ -19,5 +19,5 @@
 
 - (BOOL)animationIsActive:(ANMPercentDrivenAnimation *)animation;
 
-- (void)animationDidMutate:(ANMPercentDrivenAnimation *)animation;
+- (void)activeAnimationDidMutate:(ANMPercentDrivenAnimation *)animation;
 @end

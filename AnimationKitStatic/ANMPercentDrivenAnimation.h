@@ -8,6 +8,8 @@
 #import <QuartzCore/QuartzCore.h>
 #import "ANMTimingFunction.h"
 
+@class ANMPercentDrivenAnimationEngine;
+
 @interface ANMPercentDrivenAnimation : NSObject
 
 @property (nonatomic) CFTimeInterval startTime;

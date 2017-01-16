@@ -67,7 +67,10 @@
     NSInteger adjustedInterval = MAX(frameInterval, 1);
     if (_frameInterval != adjustedInterval) {
         _frameInterval = adjustedInterval;
-        [self.animationEngine animationDidMutate:self];
+
+        if (self.isRunning){
+            [self.animationEngine activeAnimationDidMutate:self];
+        }
     }
 }
 

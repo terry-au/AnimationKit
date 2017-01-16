@@ -49,7 +49,7 @@
         [animation setStartTime:currentTime];
         [animation setLastProgressUpdateTime:currentTime];
         [_activeAnimations addObject:animation];
-        [self setupDisplayLink];
+        [self configureDisplayLink];
     } else {
         [animation executeProgressBlockWithProgress:1];
         [animation executeCompletionBlockWithSuccess:YES];
@@ -57,7 +57,7 @@
 }
 
 - (void)stopAnimation:(ANMPercentDrivenAnimation *)animation {
-
+    [self configureDisplayLink];
 }
 
 - (BOOL)animationIsActive:(ANMPercentDrivenAnimation *)animation {
@@ -77,7 +77,6 @@
 }
 
 - (void)displayWillRefresh:(CADisplayLink *)displayLink {
-    NSLog(@"Display refreshed.");
     for (ANMPercentDrivenAnimation *animation in _activeAnimations) {
         [animation setLastProgressUpdateTime:displayLink.timestamp];
         [animation executeProgressBlockWithProgress:animation.animationProgress];
@@ -95,16 +94,36 @@
     }
 }
 
+- (NSInteger)greatestCommonFrameInterval{
+    NSInteger determinedInterval = [_activeAnimations.anyObject frameInterval];
+    for (ANMPercentDrivenAnimation *animation in _activeAnimations) {
+        NSInteger animationInterval = animation.frameInterval;
+        NSInteger minimumInterval = MIN(animationInterval, determinedInterval);
+
+        while (determinedInterval % animationInterval || determinedInterval % minimumInterval){
+            if(--minimumInterval <= 1){
+                return 1;
+            }
+        }
+        determinedInterval = minimumInterval;
+    }
+    return determinedInterval;
+}
+
 - (void)configureDisplayLink {
     if (_activeAnimations.count){
-
+        [self setupDisplayLink];
+        _displayLink.frameInterval = [self greatestCommonFrameInterval];
+        NSLog(@"frame interval: %i", _displayLink.frameInterval);
     }else{
         [self destroyDisplayLink];
     }
 }
 
-- (void)animationDidMutate:(ANMPercentDrivenAnimation *)animation {
-
+- (void)activeAnimationDidMutate:(ANMPercentDrivenAnimation *)animation {
+    if (_displayLink.frameInterval % animation.frameInterval != 0){
+        [self configureDisplayLink];
+    }
 }
 
 @end
