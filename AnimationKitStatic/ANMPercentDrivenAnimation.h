@@ -16,6 +16,7 @@
 @property (nonatomic) NSInteger frameInterval;
 @property (nonatomic) CGFloat duration;
 @property (strong, nonatomic) ANMTimingFunction *timingFunction;
+@property (nonatomic, retain) ANMPercentDrivenAnimationEngine *animationEngine;
 @property (nonatomic, readonly) CGFloat timeProgress;
 @property (copy, nonatomic) ANMCompletionBlock completionBlock;
 @property (copy, nonatomic) ANMProgressBlock progressBlock;

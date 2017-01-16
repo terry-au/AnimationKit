@@ -7,9 +7,7 @@
 #import "ANMPercentDrivenAnimationEngine.h"
 
 
-@implementation ANMPercentDrivenAnimation {
-    ANMPercentDrivenAnimationEngine *_animationEngine;
-}
+@implementation ANMPercentDrivenAnimation
 
 - (instancetype)init {
     self = [super init];
@@ -21,11 +19,11 @@
 }
 
 - (void)start {
-    [_animationEngine startAnimation:self];
+    [self.animationEngine startAnimation:self];
 }
 
 - (void)stop {
-    [_animationEngine stopAnimation:self];
+    [self.animationEngine stopAnimation:self];
 }
 
 - (void)reset {
@@ -34,7 +32,7 @@
 }
 
 - (BOOL)isRunning {
-    return [_animationEngine animationIsActive:self];
+    return [self.animationEngine animationIsActive:self];
 }
 
 - (BOOL)isFinished {
@@ -69,7 +67,7 @@
     NSInteger adjustedInterval = MAX(frameInterval, 1);
     if (_frameInterval != adjustedInterval) {
         _frameInterval = adjustedInterval;
-        [_animationEngine animationDidMutate:self];
+        [self.animationEngine animationDidMutate:self];
     }
 }
 
