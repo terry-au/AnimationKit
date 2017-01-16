@@ -19,12 +19,21 @@
 		3357EE2C1E2BCE5100A3C1FB /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3357EE2A1E2BCE5100A3C1FB /* LaunchScreen.storyboard */; };
 		3357EE371E2BCE5100A3C1FB /* AnimationKitDemoTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 3357EE361E2BCE5100A3C1FB /* AnimationKitDemoTests.m */; };
 		3357EE421E2BCE5100A3C1FB /* AnimationKitDemoUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = 3357EE411E2BCE5100A3C1FB /* AnimationKitDemoUITests.m */; };
+		3357EE4D1E2CCFBA00A3C1FB /* AnimationKitStatic.h in Headers */ = {isa = PBXBuildFile; fileRef = 3357EE0C1E2BCE1B00A3C1FB /* AnimationKitStatic.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		3357EE4E1E2CCFBA00A3C1FB /* ANMTimingFunction.h in Headers */ = {isa = PBXBuildFile; fileRef = D5AF6B535F333160F2AABC46 /* ANMTimingFunction.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		3357EE4F1E2CCFBA00A3C1FB /* ANMAnimationQueue.h in Headers */ = {isa = PBXBuildFile; fileRef = D5AF6B3884DB7AB99806BF34 /* ANMAnimationQueue.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		3357EE501E2CCFBA00A3C1FB /* ANMQueuableAnimationBase.h in Headers */ = {isa = PBXBuildFile; fileRef = D5AF6AC8DCC74776E5CFEB8E /* ANMQueuableAnimationBase.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		3357EE511E2CCFBA00A3C1FB /* ANMQueueableAnimation-Protocol.h in Headers */ = {isa = PBXBuildFile; fileRef = D5AF6FBAE7920473D56D56CF /* ANMQueueableAnimation-Protocol.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		3357EE521E2CCFBA00A3C1FB /* ANMQueueableAnimationCompletionBlock.h in Headers */ = {isa = PBXBuildFile; fileRef = D5AF6A2B11E959004F705504 /* ANMQueueableAnimationCompletionBlock.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		3357EE551E2CD10800A3C1FB /* libAnimationKitStatic.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 3357EE0A1E2BCE1B00A3C1FB /* libAnimationKitStatic.a */; };
+		D5AF60D3502647B47816D800 /* ANMPercentDrivenAnimationEngine.m in Sources */ = {isa = PBXBuildFile; fileRef = D5AF66909431BC19D9CDB65D /* ANMPercentDrivenAnimationEngine.m */; };
 		D5AF64CAF8F9118E47979D5B /* ANMAnimationQueue.m in Sources */ = {isa = PBXBuildFile; fileRef = D5AF6394089E01CA9AA7139E /* ANMAnimationQueue.m */; };
 		D5AF6676E5BFD412A723773E /* ANMQueuableAnimationBase.m in Sources */ = {isa = PBXBuildFile; fileRef = D5AF624D673E9D64CB01EC68 /* ANMQueuableAnimationBase.m */; };
-		D5AF67CD6DA2057CD56010D0 /* ANMAnimationQueue-Private.h in Headers */ = {isa = PBXBuildFile; fileRef = D5AF6B9C705AEE844C822C59 /* ANMAnimationQueue-Private.h */; };
+		D5AF67CD6DA2057CD56010D0 /* ANMAnimationQueue-Private.h in Headers */ = {isa = PBXBuildFile; fileRef = D5AF6B9C705AEE844C822C59 /* ANMAnimationQueue-Private.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		D5AF69154A3A8E05F4EA7F81 /* ANMQueueableAnimationCompletionBlock.m in Sources */ = {isa = PBXBuildFile; fileRef = D5AF60B52FD0A16C75747904 /* ANMQueueableAnimationCompletionBlock.m */; };
-		D5AF6C86E9AED0DE487A7AC8 /* ANMTypes.h in Headers */ = {isa = PBXBuildFile; fileRef = D5AF6DB8C2FD75B5D295E124 /* ANMTypes.h */; };
+		D5AF6C86E9AED0DE487A7AC8 /* ANMTypes.h in Headers */ = {isa = PBXBuildFile; fileRef = D5AF6DB8C2FD75B5D295E124 /* ANMTypes.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		D5AF6C8AF0BF385A35F28C0F /* ANMTimingFunction.m in Sources */ = {isa = PBXBuildFile; fileRef = D5AF6083CF38BB582A8BAFBC /* ANMTimingFunction.m */; };
+		D5AF6E9AFD15FED37327D584 /* ANMPercentDrivenAnimation.m in Sources */ = {isa = PBXBuildFile; fileRef = D5AF60FBA7A6CD5DFC381A40 /* ANMPercentDrivenAnimation.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -48,6 +57,13 @@
 			proxyType = 1;
 			remoteGlobalIDString = 3357EE191E2BCE5100A3C1FB;
 			remoteInfo = AnimationKitDemo;
+		};
+		3357EE561E2CD13B00A3C1FB /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = D5AF629CE4086052FD635512 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 3357EE091E2BCE1B00A3C1FB;
+			remoteInfo = AnimationKitStatic;
 		};
 /* End PBXContainerItemProxy section */
 
@@ -89,14 +105,18 @@
 		3357EE431E2BCE5100A3C1FB /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		D5AF6083CF38BB582A8BAFBC /* ANMTimingFunction.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ANMTimingFunction.m; sourceTree = "<group>"; };
 		D5AF60B52FD0A16C75747904 /* ANMQueueableAnimationCompletionBlock.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ANMQueueableAnimationCompletionBlock.m; sourceTree = "<group>"; };
+		D5AF60FBA7A6CD5DFC381A40 /* ANMPercentDrivenAnimation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ANMPercentDrivenAnimation.m; sourceTree = "<group>"; };
 		D5AF624D673E9D64CB01EC68 /* ANMQueuableAnimationBase.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ANMQueuableAnimationBase.m; sourceTree = "<group>"; };
 		D5AF6394089E01CA9AA7139E /* ANMAnimationQueue.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ANMAnimationQueue.m; sourceTree = "<group>"; };
+		D5AF66909431BC19D9CDB65D /* ANMPercentDrivenAnimationEngine.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ANMPercentDrivenAnimationEngine.m; sourceTree = "<group>"; };
+		D5AF69947119489AFF99E01F /* ANMPercentDrivenAnimationEngine.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ANMPercentDrivenAnimationEngine.h; sourceTree = "<group>"; };
 		D5AF6A2B11E959004F705504 /* ANMQueueableAnimationCompletionBlock.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ANMQueueableAnimationCompletionBlock.h; sourceTree = "<group>"; };
 		D5AF6AC8DCC74776E5CFEB8E /* ANMQueuableAnimationBase.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ANMQueuableAnimationBase.h; sourceTree = "<group>"; };
 		D5AF6B3884DB7AB99806BF34 /* ANMAnimationQueue.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ANMAnimationQueue.h; sourceTree = "<group>"; };
 		D5AF6B535F333160F2AABC46 /* ANMTimingFunction.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ANMTimingFunction.h; sourceTree = "<group>"; };
 		D5AF6B9C705AEE844C822C59 /* ANMAnimationQueue-Private.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "ANMAnimationQueue-Private.h"; sourceTree = "<group>"; };
 		D5AF6DB8C2FD75B5D295E124 /* ANMTypes.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ANMTypes.h; sourceTree = "<group>"; };
+		D5AF6F5CE7004557B1CD502C /* ANMPercentDrivenAnimation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ANMPercentDrivenAnimation.h; sourceTree = "<group>"; };
 		D5AF6FBAE7920473D56D56CF /* ANMQueueableAnimation-Protocol.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "ANMQueueableAnimation-Protocol.h"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -120,6 +140,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3357EE551E2CD10800A3C1FB /* libAnimationKitStatic.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -165,6 +186,10 @@
 				D5AF60B52FD0A16C75747904 /* ANMQueueableAnimationCompletionBlock.m */,
 				D5AF6A2B11E959004F705504 /* ANMQueueableAnimationCompletionBlock.h */,
 				D5AF6B9C705AEE844C822C59 /* ANMAnimationQueue-Private.h */,
+				D5AF60FBA7A6CD5DFC381A40 /* ANMPercentDrivenAnimation.m */,
+				D5AF6F5CE7004557B1CD502C /* ANMPercentDrivenAnimation.h */,
+				D5AF66909431BC19D9CDB65D /* ANMPercentDrivenAnimationEngine.m */,
+				D5AF69947119489AFF99E01F /* ANMPercentDrivenAnimationEngine.h */,
 			);
 			path = AnimationKitStatic;
 			sourceTree = "<group>";
@@ -243,6 +268,12 @@
 			buildActionMask = 2147483647;
 			files = (
 				3357EDF11E2BCD5E00A3C1FB /* AnimationKit.h in Headers */,
+				3357EE4D1E2CCFBA00A3C1FB /* AnimationKitStatic.h in Headers */,
+				3357EE4E1E2CCFBA00A3C1FB /* ANMTimingFunction.h in Headers */,
+				3357EE4F1E2CCFBA00A3C1FB /* ANMAnimationQueue.h in Headers */,
+				3357EE501E2CCFBA00A3C1FB /* ANMQueuableAnimationBase.h in Headers */,
+				3357EE511E2CCFBA00A3C1FB /* ANMQueueableAnimation-Protocol.h in Headers */,
+				3357EE521E2CCFBA00A3C1FB /* ANMQueueableAnimationCompletionBlock.h in Headers */,
 				D5AF6C86E9AED0DE487A7AC8 /* ANMTypes.h in Headers */,
 				D5AF67CD6DA2057CD56010D0 /* ANMAnimationQueue-Private.h in Headers */,
 			);
@@ -298,6 +329,7 @@
 			buildRules = (
 			);
 			dependencies = (
+				3357EE571E2CD13B00A3C1FB /* PBXTargetDependency */,
 			);
 			name = AnimationKitDemo;
 			productName = AnimationKitDemo;
@@ -450,6 +482,8 @@
 				D5AF64CAF8F9118E47979D5B /* ANMAnimationQueue.m in Sources */,
 				D5AF6676E5BFD412A723773E /* ANMQueuableAnimationBase.m in Sources */,
 				D5AF69154A3A8E05F4EA7F81 /* ANMQueueableAnimationCompletionBlock.m in Sources */,
+				D5AF6E9AFD15FED37327D584 /* ANMPercentDrivenAnimation.m in Sources */,
+				D5AF60D3502647B47816D800 /* ANMPercentDrivenAnimationEngine.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -496,6 +530,11 @@
 			isa = PBXTargetDependency;
 			target = 3357EE191E2BCE5100A3C1FB /* AnimationKitDemo */;
 			targetProxy = 3357EE3E1E2BCE5100A3C1FB /* PBXContainerItemProxy */;
+		};
+		3357EE571E2CD13B00A3C1FB /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 3357EE091E2BCE1B00A3C1FB /* AnimationKitStatic */;
+			targetProxy = 3357EE561E2CD13B00A3C1FB /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
@@ -593,7 +632,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = AAQ453XLKM;
 				INFOPLIST_FILE = AnimationKitDemo/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 10.2;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.terry1994.AnimationKitDemo;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -606,7 +645,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = AAQ453XLKM;
 				INFOPLIST_FILE = AnimationKitDemo/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 10.2;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.terry1994.AnimationKitDemo;
 				PRODUCT_NAME = "$(TARGET_NAME)";

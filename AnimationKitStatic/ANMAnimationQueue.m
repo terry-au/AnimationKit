@@ -20,12 +20,6 @@
     return self;
 }
 
-//- (void)enqueueAnimation:(ANMAnimationBlock)animation completion:(ANMCompletionBlock)completion{
-//    if (animation) {
-//        [_animations addObject:animation];
-//    }
-//}
-
 - (void)enqueueAnimation:(id <ANMQueueableAnimation>)animation {
     if (animation) {
         animation.queue = self;
