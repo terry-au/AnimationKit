@@ -5,7 +5,6 @@
 
 #import "ANMPercentDrivenAnimationEngine.h"
 #import "ANMPercentDrivenAnimation.h"
-#import <QuartzCore/QuartzCore.h>
 
 
 @implementation ANMPercentDrivenAnimationEngine {
@@ -100,7 +99,7 @@
         NSInteger animationInterval = animation.frameInterval;
         NSInteger minimumInterval = MIN(animationInterval, determinedInterval);
 
-        while (determinedInterval % animationInterval || determinedInterval % minimumInterval){
+        while (animationInterval % minimumInterval || determinedInterval % minimumInterval){
             if(--minimumInterval <= 1){
                 return 1;
             }
