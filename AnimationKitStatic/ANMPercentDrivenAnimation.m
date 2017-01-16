@@ -4,7 +4,6 @@
 //
 
 #import "ANMPercentDrivenAnimation.h"
-#import "ANMTimingFunction.h"
 #import "ANMPercentDrivenAnimationEngine.h"
 
 
@@ -14,7 +13,7 @@
 
 - (instancetype)init {
     self = [super init];
-    if (self){
+    if (self) {
         _animationEngine = [ANMPercentDrivenAnimationEngine sharedInstance];
         self.timingFunction = [ANMTimingFunction functionWithAnimationCurve:ANMAnimationCurveEaseInEaseOut];
     }
@@ -29,9 +28,9 @@
     [_animationEngine stopAnimation:self];
 }
 
-- (void)reset{
+- (void)reset {
     _lastProgressUpdateTime = 0;
-    _elapsedTime = 0;
+    _startTime = 0;
 }
 
 - (BOOL)isRunning {
@@ -42,14 +41,29 @@
     return self.elapsedTime >= self.duration;
 }
 
-- (CGFloat)progressFromAbsoluteProgress:(CGFloat)absoluteProgress {
-    return [self.timingFunction valueForX:absoluteProgress];
+- (void)executeProgressBlockWithProgress:(CGFloat)progress {
+    self.progressBlock(progress);
 }
 
+- (void)executeCompletionBlockWithSuccess:(BOOL)completion {
+    self.completionBlock(completion);
+}
+
+- (CFTimeInterval)elapsedTime {
+    return self.lastProgressUpdateTime - self.startTime;
+}
+
+- (CGFloat)timeProgress {
+    return (CGFLOAT_TYPE)MIN(MAX(self.elapsedTime / self.duration, 0.0f), 1.0f);
+}
+
+- (CGFloat)animationProgress {
+    return [self.timingFunction valueForX:self.timeProgress];
+}
 
 - (void)setFrameInterval:(NSInteger)frameInterval {
     NSInteger adjustedInterval = MAX(frameInterval, 1);
-    if (_frameInterval != adjustedInterval){
+    if (_frameInterval != adjustedInterval) {
         _frameInterval = adjustedInterval;
         [_animationEngine animationDidMutate:self];
     }

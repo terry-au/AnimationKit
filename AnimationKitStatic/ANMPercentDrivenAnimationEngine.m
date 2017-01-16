@@ -13,6 +13,7 @@
     NSMutableSet *_activeAnimations;
     NSMutableSet *_completeAnimations;
 }
+
 + (instancetype)sharedInstance {
     static ANMPercentDrivenAnimationEngine *sharedInstance = nil;
     static dispatch_once_t once;
@@ -26,7 +27,12 @@
 }
 
 - (instancetype)init {
-    return nil;
+    self = [super init];
+    if (self){
+        _activeAnimations = [NSMutableSet set];
+        _completeAnimations = [NSMutableSet set];
+    }
+    return self;
 }
 
 - (void)startAnimation:(ANMPercentDrivenAnimation *)animation {
@@ -38,12 +44,12 @@
 
     if (animation.duration > epsilon) {
         [animation reset];
-        CFTimeInterval currentTime = CACurrentMediaTime();
 
+        CFTimeInterval currentTime = CACurrentMediaTime();
         [animation setStartTime:currentTime];
         [animation setLastProgressUpdateTime:currentTime];
+        [_activeAnimations addObject:animation];
         [self setupDisplayLink];
-        NSLog(@"Animation added.");
     } else {
         [animation executeProgressBlockWithProgress:1];
         [animation executeCompletionBlockWithSuccess:YES];
@@ -70,8 +76,15 @@
     _displayLink = nil;
 }
 
-- (void)displayWillRefresh:(CADisplayLink *)displayWillRefresh {
+- (void)displayWillRefresh:(CADisplayLink *)displayLink {
     NSLog(@"Display refreshed.");
+    for (ANMPercentDrivenAnimation *animation in _activeAnimations) {
+        [animation setLastProgressUpdateTime:displayLink.timestamp];
+        [animation executeProgressBlockWithProgress:animation.animationProgress];
+        if (animation.isFinished){
+            [_completeAnimations addObject:animation];
+        }
+    }
 }
 
 - (void)animationDidMutate:(ANMPercentDrivenAnimation *)animation {
