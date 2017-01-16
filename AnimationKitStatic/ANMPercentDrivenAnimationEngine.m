@@ -85,6 +85,22 @@
             [_completeAnimations addObject:animation];
         }
     }
+
+    if (_completeAnimations.count){
+        [_activeAnimations minusSet:_completeAnimations];
+        for (ANMPercentDrivenAnimation *finishedAnimation in _completeAnimations){
+            [finishedAnimation executeCompletionBlockWithSuccess:YES];
+        }
+        [self configureDisplayLink];
+    }
+}
+
+- (void)configureDisplayLink {
+    if (_activeAnimations.count){
+
+    }else{
+        [self destroyDisplayLink];
+    }
 }
 
 - (void)animationDidMutate:(ANMPercentDrivenAnimation *)animation {

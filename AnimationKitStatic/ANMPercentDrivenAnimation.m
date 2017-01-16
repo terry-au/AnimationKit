@@ -42,11 +42,15 @@
 }
 
 - (void)executeProgressBlockWithProgress:(CGFloat)progress {
-    self.progressBlock(progress);
+    if (self.progressBlock){
+        self.progressBlock(progress);
+    }
 }
 
 - (void)executeCompletionBlockWithSuccess:(BOOL)completion {
-    self.completionBlock(completion);
+    if (self.completionBlock){
+        self.completionBlock(completion);
+    }
 }
 
 - (CFTimeInterval)elapsedTime {
